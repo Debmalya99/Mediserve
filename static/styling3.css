@@ -1,0 +1,99 @@
+nav{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+li{
+	
+	display: block;
+	color: #000;
+	padding: 14px 16px;
+	text-decoration: none;
+	float: right;
+}
+a{
+	text-decoration: none;
+}
+.logo{
+	float: left;
+}
+#header{
+	padding: 40px 0px;
+	border-bottom: 2px solid;
+}
+#background-im{
+	background: #ADD8E6;
+	max-height: Auto;
+	width: 93%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: #000;
+	margin: 50px 50px 50px 50px;
+	border-bottom: 2px solid;
+	border-top: 2px solid;
+	float: center;
+}
+#content{
+	background-color: rgb(232,244,248);
+	max-width: 90%;
+	height: 3920px;
+	padding-top: 20px;
+	padding-right: 30px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	margin: 50px 50px 50px 50px;
+	border: double;
+}
+footer {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  display: block;
+  background-color: #ADD8E6;
+  border-top: 2px solid;
+}
+.footer-copyright {
+  font-weight: 300;
+  overflow: hidden;
+  height: 250px;
+  line-height: 50px;
+  color: rgba(255,255,255,1);
+  font-size: 25px;
+  background-color: rgba(51, 51, 51, 0.08);
+}
+#container {
+  width: 85%;
+  padding: 10px 15px 10px 15px;
+  max-width: 1280px;
+  float: left;
+}
+form{
+	color: black;
+}
+input[type=button]{ 
+            font: 17px Calibri;
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+}
+#filcon{
+	font-size: 20px;
+}
+#filcon1{
+	font-size: 30px;
+	
+}
+input[type=text],[type=number],[type=email], textarea, select {
+            font: 17px Calibri;
+            width: 97%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+input [type=radio]{
+            font: 17px Calibri;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }

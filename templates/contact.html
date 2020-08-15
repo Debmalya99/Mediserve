@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>-
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'styling3.css')}}">
+    <title>Contact Information</title>
+
+    <script>
+  function disable(){
+    document.getElementById("msg").disabled=true;
+  }
+  function enable() {
+  document.getElementById("msg").disabled=false;
+  }
+  </script>
+
+  </head>
+  <body>
+
+    <div id="header">
+  <a href="#" class="logo">
+    <img src="{{url_for('static',filename = 'Mediserve.png')}}" alt="">
+  </a>
+  <nav>
+    <ul>
+      <li><a href="{{url_for('about_us')}}">About Us</a></li>
+      <li><a href="{{url_for('index')}}">Home</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div class="jumbotron text-center">
+      <h1>Predicted disease : {{out_data['text']}}</h1>
+      <p>{{out_data['desc']}}</p>
+      <p><b>Severity</b> : {{out_data['severity']}}</p>
+    </div>
+    <div class="card" style="width:400px">
+    <div class="card-body">
+      <h4 class="card-title">Precautions you can take</h4>
+      <ul>
+      {% for m in out_data['prec'] %}
+      <li class="card-text">{{m}}</li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <form action="" action = "post"><b>
+			<div id="filcon1"><center><u>Patients Details</u></center></div><br><br>
+			<div id="filcon">Patient Name<br><br>
+			<select name="Cat"><option value="">--Cat.--</option><option value="Mr.">Mr.</option><option  value="Mrs.">Mrs.</option>
+			<option value="Shri." name ="pre_name">Shri.</option><option value="Smt.">Smt.</option><option value="Others">Others</option></select>
+			<input type="text" name="firstname" placeholder="Enter your First Name">
+			<input type="text" name="middlename" placeholder="Enter your Middle Name(Optional)">
+			<input type="text" name="lastname" placeholder="Enter your Last Name"><br><br></div>
+			<div id="filcon">Email Id.<br><br><input type="email" name="emailid" placeholder="Enter your Email Address"></div><br><br>
+			<div id="filcon">Gender<br><br>
+			<input type="radio" name="gender" value="Male">Male
+			<input type="radio" name="gender" value="Female">Female
+			<input type="radio" name="gender" value="Others">Others<br><br>
+			<div id="filcon">Age*<br><br><input type="number" name="age" min="10" max="100" placeholder="Enter your Age"></div><br><br>
+			<!--<div id="filcon">Date of Birth* <br><br>-->
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="birthday"><br><br>
+			<div id="filcon">Height(cms)<br><br> <input type="number" name="hh" placeholder="Enter your Height"></div><br><br>
+			<div id="filcon">Weight(kgs)<br><br><input type="number" name="ww" placeholder="Enter your Weight"></div><br><br>
+			<div id="filcon">Contact Number<br><br> <input type="number" name="cno" placeholder="Enter your Contact Number"></div><br><br>
+			<div id="filcon">Address* <br><br><input type="text" name="add" placeholder="Enter your Address"><br><br>
+			City <br><br><input type="text" name="City" placeholder="City"><br><br>
+			Pincode <br><br><input type="text" name="pin" placeholder="Pincode"><br><br>
+			State/Province<br><br> <input type="text" name="State" placeholder="State/Province"><br><br>
+			Country <br><br><input type="text" name="Country" placeholder="Country"></div><br><br>
+			<div id="filcon">Taking any medication currently? <br><br>
+			<input type="radio" name="med" onclick="enable()" value="Yes">Yes
+			<input type="radio" name="med" onclick="disable()" value="No">No</div><br><br>
+			<div id="filcon">If Yes, Please list it here,<br><br>
+			<textarea id="msg" name="msg" placeholder="Please list it here..." > </textarea></div><br>
+			<br>
+			<center><u><div id="filcon1">Others</div><br></u></center>
+			<div id="filcon" >In the case of Emergency...</div><br>
+			<div id="filcon">Emergency Contact Name<br><br>
+			<input type="text" name="Efirstname" placeholder="Enter your First Name">
+			<input type="text" name="Emiddlename" placeholder="Enter your Middle Name">
+			<input type="text" name="Elastname" placeholder="Enter your Last Name"></div><br><br>
+			<div id="filcon">Relation with the Patient<br><br> <input type="text" name="rel" placeholder="Relationship"></div><br><br>
+			<div id="filcon">Contact Number <br><br><input type="text" name="Ecno" placeholder="Enter your Contact Number"></div><br><br>
+      Select the Hospital to contact<br><br>
+      <select class="" name="hospital">
+        <option>ABC Hospital</option>
+        <option>XYZ Hospital</option>
+        <option>MNO Hospital</option>
+        <option>Lord of the Rings Hospital</option>
+      </select>
+      <br><br>
+    </b>
+			<center><button class ="btn btn-primary"  type="submit" id="bt" value="email_button"  />Send E-mail</center>
+			</form>
+      <br><br>
+
+  </body>
+</html>

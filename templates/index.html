@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'styling.css')}}">
+    <title>{{group_data['title']}}</title>
+  </head>
+  <body>
+
+    <div id="header">
+			<img src="{{url_for('static',filename = 'Mediserve.png')}}" alt="">
+
+		<nav>
+			<ul>
+				<li><a href="{{url_for('about_us')}}">About Us</a></li>
+			</ul>
+		</nav>
+
+	</div>
+
+	<center>
+
+			<div id="background-im">
+			  <div id="content">
+			   <h1>MEDISERVE</h1>
+			   <h4>We Care for Your Life</h4>
+
+
+			   <marquee >
+			      <h3>Mediserve gives you disease prediction from your symptoms and suggest extra precautions aloong with a brief description of the disease</h3>
+			   </marquee>
+          <h4>To get started select at least 3 symptoms</h4>
+			   </div>
+			   </div>
+	     </center>
+
+    <form class="" action = "#" method="post">
+      {% for m in range(1,18) %}
+        {{group_data['sym_name'][m-1]}}
+        <select class="" name="{{group_data['disp_sym'][m-1]}}">
+          {% for k in group_data['sym_options'][m-1]%}
+            <option value = "{{k}}">{{transform_string(k)}}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+      {% endfor %}
+      <button type="submit" name="predict">Predict</button>
+    </form>
+  </body>
+</html>
